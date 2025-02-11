@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 550px;
+}
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  color: black;
+}
+.input_top {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 70%;
+  color: black;
+}
+.btn {
+  background: #ff9966;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 20%;
+}
+.container_radio {
+  display: flex;
+  gap: 20px;
+}
+.input_radio {
+  display: flex;
+}
+.input_radio > div {
+  width: 80px;
+}
+.container_phone {
+  display: flex;
+  gap: 20px;
+}
+.container_phone > input {
+  padding: 10px;
+}
+button {
+  background: #ff9966;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+.container_birth {
+  display: flex;
+  justify-content: space-between;
+}
+.container_birth > select {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 30%;
+  color: black;
+}

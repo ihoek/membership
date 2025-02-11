@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/membership.css" />
+    <title>회원가입 페이지</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/memberForm" method="post">
+        <div class="main">
+          <input
+            class="input_top"
+            type="text"
+            placeholder="이름을 입력하세요"
+            name="name"
+            required
+          />
+          <div class="row">
+            <input
+              class="input_top"
+              type="text"
+              placeholder="아이디를 입력하세요"
+              name="id"
+              id="input_id"
+              onkeyup="printId()"
+              required
+            />
+            <div class="btn" onclick="check()">중복확인</div>
+          </div>
+          <input
+            class="input_top"
+            type="text"
+            placeholder="비밀번호를 입력하세요"
+            name="pw"
+            id="input_pw"
+            onkeyup="printpw()"
+            required
+          />
+          <div class="row">
+            <input
+              class="input_top"
+              type="text"
+              placeholder="비밀번호를 재입력하세요"
+              onkeyup="printRepw()"
+              id="input_repw"
+              name="pwcheck"
+              required
+            />
+            <div class="btn" onclick="check_pw()">비밀번호 확인</div>
+          </div>
+          <div class="container_radio">
+            <div class="input_radio">
+              <input type="radio" name="gender" value="woman" required />
+              <div>여성</div>
+            </div>
+            <div class="input_radio">
+              <input type="radio" name="gender" value="man" />
+              <div>남성</div>
+            </div>
+          </div>
+          <div>전화번호</div>
+          <div class="container_phone">
+            <input type="text" name="phone_first" required />
+            <div>-</div>
+            <input type="text" name="phone_sec" required />
+            <div>-</div>
+            <input type="text" name="phone_thr" required />
+          </div>
+          <div>생년월일</div>
+          <div class="container_birth">
+            <select name="birth_year">
+              <% for(let year = 1990; year <= 2025; year++) { %>
+              <option value="<%= year %>"><%= year %></option>
+              <% } %>
+            </select>
+            <select name="birth_month">
+              <% for(let month = 1; month <= 12; month++) { %>
+              <option value="<%= month %>"><%= month %></option>
+              <% } %>
+            </select>
+            <select name="birth_day">
+              <% for(let day = 1; day <= 12; day++) { %>
+              <option value="<%= day %>"><%= day %></option>
+              <% } %>
+            </select>
+          </div>
+          <button type="submit">회원가입</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="/js/membership.js"></script>
+</html>

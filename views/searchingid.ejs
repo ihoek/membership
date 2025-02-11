@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/searchingid.css" />
+    <title>아이디 찾기 페이지</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container_main">
+        <form action="/search_id" method="get">
+          <div class="main">
+            <h3>아이디 찾기</h3>
+            <input
+              type="text"
+              placeholder="전화번호를 입력하세요"
+              name="search_phone"
+            />
+            <button type="submit" onclick="find_number()">찾기</button>
+          </div>
+        </form>
+        <div>해당 아이디는</div>
+      </div>
+    </div>
+  </body>
+  <script src="/js/searchingid.js"></script>
+</html>

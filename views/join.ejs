@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/join.css" />
+    <title>로그인 페이지</title>
+  </head>
+  <body>
+    <div class="container">
+      <form action="/loginForm" method="post">
+        <h2>로그인 페이지</h2>
+        <div class="main_input">
+          <input
+            type="text"
+            name="id"
+            id="id"
+            onkeyup="print()"
+            placeholder="아이디를 입력하세요"
+          />
+          <input
+            type="text"
+            name="pw"
+            id="pw"
+            onkeyup="printpw()"
+            placeholder="비밀번호를 입력하세요"
+          />
+        </div>
+        <button class="login" type="submit" onclick="login()">로그인</button>
+        <div class="sub_menu">
+          <div class="search_id">아이디 찾기</div>
+          <div class="search_pw">비밀번호 찾기</div>
+          <div class="search_membership">회원가입</div>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="/js/join.js"></script>
+</html>
