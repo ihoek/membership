@@ -89,3 +89,6 @@ button {
   cursor: not-allowed;
   opacity: 0.6;
 }
+.pw_pattern {
+  font-size: 10px;
+}

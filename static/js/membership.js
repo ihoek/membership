@@ -25,7 +25,18 @@ function printId() {
 
 //비밀번호 중복 확인
 function printpw() {
+  const pw_pattern = document.querySelector(".pw_pattern");
   pw = input_pw.value;
+
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+  if (regex.test(pw)) {
+    pw_pattern.innerText = "";
+  } else {
+    pw_pattern.innerText =
+      "비밀번호는 8자리 이상이며, 대소문자, 숫자, 특수문자를 포함해야 합니다.";
+    pw_pattern.style.color = "red"; // 유효하지 않으면 빨간색 테두리
+  }
 }
 function printRepw() {
   repw = input_repw.value;

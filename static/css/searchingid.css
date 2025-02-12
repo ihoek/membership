@@ -48,7 +48,7 @@ input:focus {
   outline: none;
 }
 
-button {
+.btn {
   width: 20%;
   background: #ff9966;
   color: white;
@@ -61,9 +61,4 @@ button {
 
 button:active {
   background: #e6875c;
-}
-
-div:last-child {
-  font-size: 14px;
-  color: #666;
 }

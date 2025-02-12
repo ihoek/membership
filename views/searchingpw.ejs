@@ -8,13 +8,21 @@
   </head>
   <body>
     <div class="container">
-      <form action="/search_pw" method="get">
-        <div class="main">
-          <h3>비밀번호 찾기</h3>
-          <input type="text" placeholder="아이디를 입력하세요" />
-          <div>찾기</div>
-        </div>
-      </form>
+      <div class="container_main">
+        <form action="/search_pw" method="get">
+          <div class="main">
+            <h3>비밀번호 찾기</h3>
+            <input
+              type="text"
+              placeholder="아이디를 입력하세요"
+              ame="search_id"
+              id="search_id"
+            />
+            <div class="btn" onclick="find_number()">찾기</div>
+          </div>
+        </form>
+        <div class="result"></div>
+      </div>
     </div>
   </body>
   <script src="/js/searchingpw.js"></script>

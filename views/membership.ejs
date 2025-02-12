@@ -13,7 +13,7 @@
           <input
             class="input_top"
             type="text"
-            placeholder="이메일을 입력하세요"
+            placeholder="이름을 입력하세요"
             name="name"
             required
           />
@@ -21,7 +21,7 @@
             <input
               class="input_top"
               type="text"
-              placeholder="아이디를 입력하세요"
+              placeholder="아이디(이메일)를 입력하세요"
               name="id"
               id="input_id"
               onkeyup="printId()"
@@ -31,17 +31,20 @@
           </div>
           <input
             class="input_top"
-            type="text"
+            type="password"
             placeholder="비밀번호를 입력하세요"
             name="pw"
             id="input_pw"
             onkeyup="printpw()"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+            title="비밀번호는 8자리 이상이며, 대소문자, 숫자, 특수문자를 포함해야 합니다."
             required
           />
+          <span class="pw_pattern"></span>
           <div class="row">
             <input
               class="input_top"
-              type="text"
+              type="password"
               placeholder="비밀번호를 재입력하세요"
               onkeyup="printRepw()"
               id="input_repw"
