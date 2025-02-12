@@ -7,6 +7,16 @@ const pw = document.getElementById("pw");
 const login = document.getElementById("login");
 
 let local_data_map = JSON.parse(localStorage.getItem("data")) || [];
+let local_data_id = []; // id만 있는 배열
+local_data_map.map((element) => {
+  local_data_id.push(element.id);
+});
+let local_data_pw = []; // 비밀번호만 있는 배열
+local_data_map.map((element) => {
+  local_data_pw.push(element.pw);
+});
+
+let id_row = false;
 
 let isIdValid = false;
 let isPwValid = false;
@@ -50,50 +60,25 @@ fetch("/userinfo")
 // 아이디 확인 함수
 function printid() {
   let userid = id.value;
-  // 아이디를 로컬 데이터에서 찾기
-  let found = false;
-  local_data_map.forEach((element) => {
-    if (userid === element.id) {
-      console.log("아이디 찾음", element);
-      isIdValid = true;
-      found = true;
-    }
-  });
-
-  if (!found) {
-    isIdValid = false;
+  //console.log("local_data_id.indexOf(userid)", local_data_id.indexOf(userid));
+  if (local_data_id.indexOf(userid) >= 0) {
+    //값이 있는경우
+    //checkForm(local_data_id.indexOf(userid)); //몇번째 배열에 있는지 확인
+    id_row = local_data_id.indexOf(userid);
+  } else {
+    login.disabled = true;
   }
-  checkForm();
 }
 
 // 비밀번호 확인 함수
 function printpw() {
   let userpw = pw.value;
-  // 비밀번호를 로컬 데이터에서 찾기
-  let found = false;
-  local_data_map.forEach((element) => {
-    if (userpw === element.pw) {
-      console.log("비밀번호 찾음", element);
-      isPwValid = true;
-      found = true;
-    }
-  });
-
-  if (!found) {
-    isPwValid = false;
-  }
-  checkForm();
-}
-
-// 폼 유효성 검사
-function checkForm() {
-  if (isIdValid && isPwValid) {
-    login.disabled = false; // 아이디와 비밀번호가 모두 유효하면 버튼 활성화
+  if (local_data_pw.indexOf(userpw) === id_row) {
+    login.disabled = false;
   } else {
-    login.disabled = true; // 하나라도 유효하지 않으면 버튼 비활성화
+    login.disabled = true;
   }
 }
-
 window.onload = function () {
-  login.disabled = true; // 페이지 로드 시 버튼 비활성화
+  login.disabled = true;
 };
