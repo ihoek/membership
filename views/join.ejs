@@ -15,8 +15,8 @@
             type="text"
             name="id"
             id="id"
-            onkeyup="print()"
             placeholder="아이디를 입력하세요"
+            onkeyup="printid()"
           />
           <input
             type="text"
@@ -26,7 +26,7 @@
             placeholder="비밀번호를 입력하세요"
           />
         </div>
-        <button class="login" type="submit" onclick="login()">로그인</button>
+        <button class="login" type="submit" id="login">로그인</button>
         <div class="sub_menu">
           <div class="search_id">아이디 찾기</div>
           <div class="search_pw">비밀번호 찾기</div>
